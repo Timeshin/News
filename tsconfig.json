@@ -1,20 +1,25 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "outDir": "./dist/",
+    "target": "es6",
+    "baseUrl": ".",
+    "paths": {
+      "@/styles/*": ["src/styles/*"],
+      "@/components/*": ["src/components/*"]
+    },
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
-    "allowJs": true,
+    "allowJs": false,
     "skipLibCheck": true,
-    "esModuleInterop": true,
+    "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
+    "module": "ESNext",
+    "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
@@ -22,5 +27,8 @@
   },
   "include": [
     "src"
+  ],
+  "exclude": [
+    "webpack.config.js"
   ]
 }

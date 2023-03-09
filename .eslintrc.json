@@ -1,0 +1,47 @@
+{
+	"root": true,
+	"env": {
+		"browser": true,
+		"es2021": true
+	},
+	"extends": [
+		"eslint:recommended",
+		"plugin:react/recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:react/jsx-runtime",
+		"plugin:react-hooks/recommended",
+		"prettier"
+	],
+	"overrides": [],
+	"settings": {
+		"react": {
+			"version": "detect"
+		}
+	},
+	"parserOptions": {
+    "project": "tsconfig.json",
+    "tsconfigRootDir": ".",
+    "sourceType": "module"
+  },
+	"plugins": ["react", "@typescript-eslint", "react-hooks", "unused-imports"],
+	"rules": {
+		"arrow-body-style": ["error", "as-needed"],
+		"unused-imports/no-unused-imports": "error",
+		"@typescript-eslint/no-unused-vars": "warn",
+		"@typescript-eslint/no-explicit-any": "error",
+		"react-hooks/rules-of-hooks": "error",
+		"react-hooks/exhaustive-deps": "warn",
+		"react/jsx-uses-vars": "error",
+		"react/button-has-type": "error",
+		"react/display-name": "error",
+		"react/hook-use-state": "warn",
+		"react/jsx-no-duplicate-props": "error",
+		"react/require-default-props": "off",
+		"indent": "off",
+		"jsx-quotes": ["warn", "prefer-single"],
+		"func-style": ["error", "expression"],
+		"linebreak-style": ["error", "unix"],
+		"quotes": ["warn", "single"],
+		"semi": ["error", "never"]
+	}
+}

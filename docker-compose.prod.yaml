@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  frontend:
+    container_name: news-prod
+    image: news-prod
+    build:
+      target: production
+      context: .
+      dockerfile: Dockerfile.prod
+    ports:
+      - '3000:3000'

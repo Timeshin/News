@@ -1,0 +1,6 @@
+dist
+node_modules
+.eslint*
+*.json
+public
+*.config.js
