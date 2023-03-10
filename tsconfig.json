@@ -5,7 +5,10 @@
     "baseUrl": ".",
     "paths": {
       "@/styles/*": ["src/styles/*"],
-      "@/components/*": ["src/components/*"]
+      "@/components": ["src/components"],
+      "@/config/*": ["src/config/*"],
+      "@/pages/*": ["src/pages/*"],
+      "@/modules/*": ["src/modules/*"]
     },
     "lib": [
       "dom",

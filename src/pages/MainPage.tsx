@@ -1,3 +1,5 @@
-const MainPage = () => <div>MainPage</div>
+import { StoriesList } from '@/modules/StoryBlock'
+
+const MainPage = () => <StoriesList />
 
 export default MainPage

@@ -15,6 +15,9 @@ module.exports = {
     alias: {
       '@/styles': path.resolve(__dirname, 'src/styles/'),
       '@/components': path.resolve(__dirname, 'src/components/'),
+      '@/config': path.resolve(__dirname, 'src/config/'),
+      '@/pages': path.resolve(__dirname, 'src/pages/'),
+      '@/modules': path.resolve(__dirname, 'src/modules/')
     }
   },
   module: {
@@ -52,6 +55,7 @@ module.exports = {
     })
   ],
   devServer: {
+    historyApiFallback: true,
     static: {
       directory: path.join(__dirname, 'public'),
     },
