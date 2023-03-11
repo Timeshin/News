@@ -1,13 +1,13 @@
 import { Button, Paper, Skeleton, Table, TableBody, TableContainer, Typography } from '@mui/material'
 import { Container } from '@mui/system'
 import { useNavigate } from 'react-router-dom'
-import useRequest from '../../hooks/useRequest'
-import NewsService from '../../services/news.service'
+import useFetch from '@/hooks/useFetch'
+import StoriesService from '../../services/stories.service'
 import StoriesHeader from '../StoriesHeader/StoriesHeader'
 import StoryItem from '../StoryItem/StoryItem'
 
 const StoriesList = () => {
-	const { data, isLoading, isError, refetch } = useRequest(NewsService.getStoriesData.bind(NewsService), 60000)
+	const { data, isLoading, isError, refetch } = useFetch(StoriesService.getStoriesData.bind(StoriesService), 60000)
 	const navigate = useNavigate()
 
 	const onOpenNewsStoryHandler = (storyId: number) => {

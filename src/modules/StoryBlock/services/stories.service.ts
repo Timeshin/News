@@ -1,20 +1,20 @@
 import { AxiosInstance } from 'axios'
 import fetchInstance from '@/config/fetchInstance'
-import type { IStory } from '../types/newsService.types'
+import type { IStory } from '@/types/common.types'
 
-class NewsService {
+class StoriesService {
 	private readonly apiInstance: AxiosInstance
 
 	constructor(api: AxiosInstance) {
 		this.apiInstance = api
 	}
 
-	private async getBestStoriesIds() {
-		return this.apiInstance.get<number[]>('topstories.json?orderBy="$key"&limitToFirst=100').then(({ data }) => data)
+	private async getNewStoriesIds() {
+		return this.apiInstance.get<number[]>('newstories.json?orderBy="$key"&limitToFirst=100').then(({ data }) => data)
 	}
 
 	public async getStoriesData() {
-		const bestStoriesIds = await this.getBestStoriesIds()
+		const bestStoriesIds = await this.getNewStoriesIds()
 		const promisesArray = bestStoriesIds.map((storyId) =>
 			this.apiInstance.get<IStory>(`item/${storyId}.json`).then(({ data }) => data)
 		)
@@ -30,4 +30,4 @@ class NewsService {
 	}
 }
 
-export default new NewsService(fetchInstance)
+export default new StoriesService(fetchInstance)

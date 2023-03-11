@@ -8,7 +8,9 @@
       "@/components": ["src/components"],
       "@/config/*": ["src/config/*"],
       "@/pages/*": ["src/pages/*"],
-      "@/modules/*": ["src/modules/*"]
+      "@/modules/*": ["src/modules/*"],
+      "@/types/*": ["src/types/*"],
+      "@/hooks/*": ["src/hooks/*"]
     },
     "lib": [
       "dom",

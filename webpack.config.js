@@ -17,7 +17,9 @@ module.exports = {
       '@/components': path.resolve(__dirname, 'src/components/'),
       '@/config': path.resolve(__dirname, 'src/config/'),
       '@/pages': path.resolve(__dirname, 'src/pages/'),
-      '@/modules': path.resolve(__dirname, 'src/modules/')
+      '@/modules': path.resolve(__dirname, 'src/modules/'),
+      '@/types': path.resolve(__dirname, 'src/types/'),
+      '@/hooks': path.resolve(__dirname, 'src/hooks/')
     }
   },
   module: {

@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import type { IStory } from '../../types/newsService.types'
+import type { IStory } from '@/types/common.types'
 import dayjs from 'dayjs'
 
 import { TableCell, TableRow } from '@mui/material'
