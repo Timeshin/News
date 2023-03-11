@@ -1,46 +1,61 @@
-# Getting Started with Create React App
+# News
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### App --> https://timeshin.github.io/News/
 
-## Available Scripts
+## Work with project
 
-In the project directory, you can run:
+### Install dependencies
 
-### `npm start`
+`npm install`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Start project in dev
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+`npm run start:dev`
 
-### `npm test`
+### Start project in prod
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+  npm run build
+  npm run start:prod
+```
 
-### `npm run build`
+## Docker
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Run app in docker. DEV
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`docker-compose -f docker-compose.dev.yaml up`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Run app in docker. PROD
 
-### `npm run eject`
+`docker-compose -f docker-compose.prod.yaml up`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Commits
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Before commits
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+`npm run prepare`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Architecture
 
-## Learn More
+#### Directories
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    ├── src
+       ├── components           # general reusable components which doesn't have much logic
+       ├── modules              # pages parts that contain any difficult logic. Own store, have api requests, consists of other components
+         ├── Story              # module
+           ├── services         # module api requests
+           ├── components       # module components
+           ├── index.ts         # public api. All what you need to import outside (store, module)
+       ├── config               # any configuration (preflight config, request config)
+       ├── hooks                # custom hooks
+       ├── pages                # app pages which doesn't have any logic, just collect components
+       ├── styles               # global styles, styles configs etc.
+       ├── types                # general types
+
+### Deploy
+
+```
+  npm run predeploy
+  npm run deploy
+```
